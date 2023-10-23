@@ -36,6 +36,8 @@ def setup_docker():
         cwd,
         "-v",
         "/var/run/docker.sock:/var/run/docker.sock",
+        "-e",
+        "DOCKER_DEFAULT_PLATFORM=linux/amd64",
     ]
 
     if "cvmfs" in config.backends[backend]:
